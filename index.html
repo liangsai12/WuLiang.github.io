@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>婚宴邀请</title>
+
+    <meta name="description" content="WEDDING PAGE">
+    <meta name="author" content="YOOJIA">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style media="screen">
+    .circular-avatar{
+      border-radius:50%;
+      width: 50%;
+      height: 50%;
+    }
+    section h1.mt250 {
+        margin-top: -250px;
+        text-shadow: #2b2b2b 2px 2px;
+    }
+    section>img.mt{
+        margin-top: -350px;
+    }
+    #main-content{
+      position: relative;
+      text-align: left;
+      margin-top: 100px;
+      padding: 50px;
+      bottom: 0;
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="reveal" id="app">
+    <div class="slides">
+        <section data-background="images/background.jpg">
+            <img src="images/avatar.jpg" class="circular-avatar mt"/>
+            <h1 style="margin-top: 30px;">陈永佳 &amp;&amp; 杨金波</h1>
+            <h3>请为我们送上祝福吧！</h3>
+            <div id="main-content">
+              <h2>2016年09年24日 11:00 AM</h2>
+              <h3>深圳南山益田假日广场3楼东侧四海一家</h3>
+              <h3 style="margin-top: 50px;">诚挚欢迎您的光临！</h3>
+            </div>
+            <p style="margin-top: 30px;" class="slide-effect">滑动来欣赏相册</p>
+        </section>
+
+        <section v-for="item in images" v-bind:data-background="item.image" data-background-transition="zoom">
+          <h1 class="mt250">{{ item.title }}</h1>
+        </section>
+    </div>
+</div>
+
+<div id="control">
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px" y="0px" width="24px" height="24px" viewBox="0 0 46 46" enable-background="new 0 0 46 46" xml:space="preserve"
+    style="position: absolute; top: 10px; right: 10px; border: 0;"
+    v-on:click="controlMusic"
+    >
+     <g>
+       <circle opacity="0.6" cx="23" cy="23" r="23"></circle>
+         <g>
+           <path fill="#ECECEC" d="M23,2c11.6,0,21,9.4,21,21s-9.4,21-21,21S2,34.6,2,23S11.4,2,23,2 M23,0C10.3,0,0,10.3,0,23s10.3,23,23,23 s23-10.3,23-23S35.7,0,23,0L23,0z"></path>
+         </g>
+        <path fill="#ECECEC" d="M27.5,7.3c0.6,1.1,0.8,2.4,1.6,3.4c0.9,1.5,2.1,2.8,3,4.3c0.6,1.1,1.3,2.2,1.4,3.4c0.4,1.6-0.1,3.4-0.9,4.8 c-0.8,0.7-1.1-0.4-0.9-1c0.1-0.9,0.2-1.8,0-2.7c-0.2-1.3-0.6-2.6-1.4-3.7c-0.7-0.8-1.5-2.5-2.8-2.1c-0.9,0.4-0.7,1.5-0.8,2.3 c-0.6,5-1.2,10.1-1.9,15.1c-0.3,2.1-2.3,3.3-4.1,4c-1.6,0.7-3.5,1-5.2,0.4c-1.6-0.4-3.2-1.8-3-3.5c0.1-2.1,1.8-3.8,3.8-4.4 c1.9-0.8,4.2-0.8,6.1,0.2c0.9,0.4,1.3-0.4,1.5-1.3c0.9-6.4,1.7-12.8,2.5-19.2C26.3,6.8,27.4,6.7,27.5,7.3L27.5,7.3z"></path>
+    </g>
+    <polygon v-if="stop" fill="#ECECEC" points="14,11.2 13.2,12.9 33.3,34.2 34.2,32.5 "></polygon>
+  </svg>
+</div>
+
+<script src="js/vue.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+var DATA_MODEL = {
+  images: [{
+    image: "images/2012.jpg",
+    title: "SINCE 2012"
+  },{
+    image: "images/2013.jpg",
+    title: "GO ON 2013"
+  },{
+    image: "images/2014.jpg",
+    title: "2014 HongKong"
+  },{
+    image: "images/2015.png",
+    title: "2015 ShenZhen"
+  },{
+    image: "images/2016.png",
+    title: "2016 Harbin"
+  },{
+    image: "images/married-1.jpg",
+    title: "2016 Sanya"
+  },{
+    image: "images/married-2.jpg",
+    title: "2016 Married"
+  },{
+    image: "images/married-3.jpg",
+    title: "2016 Married"
+  },{
+    image: "images/married-4.jpg",
+    title: "2016 Married"
+  },{
+    image: "images/married-5.jpg",
+    title: "2016 Married"
+  }]
+};
+
+new Vue({el: '#app', data: DATA_MODEL});
+
+var CONTROL_MODEL = {
+  stop: false
+};
+
+new Vue({el: '#control', data: CONTROL_MODEL, methods: {
+  controlMusic: function(){
+    if (CONTROL_MODEL.stop) {
+        document.getElementById("bgm").play();
+    }else{
+        document.getElementById("bgm").pause();
+    }
+    CONTROL_MODEL.stop = !CONTROL_MODEL.stop;
+  }
+}});
+
+Reveal.initialize({
+	controls: false,
+	progress: true,
+	history: false,
+	center: false,
+	transition: 'zoom',
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true }
+	]
+});
+
+</script>
+
+<audio autoplay="autoplay" loop="loop" id="bgm">
+  <source src="/bgm/beautiful-in-white.mp3" type="audio/mpeg" />
+</audio>
+
+</body>
+</html>
