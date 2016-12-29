@@ -13,9 +13,7 @@
  
 <!-- 写点样式，让轮播好看点 -->
 <style>
-.banner { position: relative; overflow: auto; }
-    .banner li { list-style: none; }
-        .banner ul li { float: left; }
+
 </style>
  
 </head>
@@ -23,47 +21,16 @@
 <!-- 把要轮播的地方写上来 -->
 <div class="banner">
 			<ul>
-				<li style="background-image: url('./images/1.jpg');">
-					<div class="inner">
-						<h1>第一个</h1>
-						<p>哈哈</p>
-
-						<!-- a class="btn" href="#download">下载</a-->
-					</div>
-				</li>
-
-				<li style="background-image: url('./images/2.jpg');">
-					<div class="inner">
-						<h1>.</h1>
-						<p>You </p>
-
-					</div>
-				</li>
-
-				<li style="background-image: url('./images/3.jpg');">
-					<div class="inner">
-						<h1>开源</h1>
-						<p>在GitHub上。</p>
-
-		
-					</div>
-				</li>
-
-				<li style="background-image: url('./images/4.jpg');">
-					<div class="inner">
-						<h1>it.</h1>
-						<p>slide.</p>
-
-					</div>
-				</li>
+		<li><img src="./images/1.jpg"  >	
+        <li><img src="./images/2.jpg" ></li>
+        <li><img src="./images/3.jpg"  ></li>
+        <li><img src="./images/4.jpg" ></li>
+				
 			</ul>
 		</div>
 </body>
 <script>
 <!-- 最后用js控制 -->
-	if(window.chrome) {
-				$('.banner li').css('background-size', '100% 100%');
-			}
 
 			$('.banner').unslider({
 				//arrows: true,
@@ -71,17 +38,6 @@
 				//dots: true
 			});
 					
-			$('a[href^="#"]').click(function() {
-				var target = $($(this).attr('href'));
-				var pos = target.offset(); 
 
-				if(pos) {
-					$('html, body').animate({
-						scrollTop: pos.top,
-						scrollLeft: pos.left
-					}, 300000);
-				}
-				return false;
-			});
 </script>
 </html>
